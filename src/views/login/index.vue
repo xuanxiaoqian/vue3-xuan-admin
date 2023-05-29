@@ -44,8 +44,8 @@ const $ = curT('login')
 const userStore = useUserStore()
 
 const loginData = reactive({
-  userName: '',
-  userPwd: '',
+  userName: 'root',
+  userPwd: '123456',
 })
 
 
