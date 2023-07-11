@@ -92,7 +92,9 @@ export const useTabsStore = defineStore({
 
     },
 
-    setItemTagList() {  // 优化点,每个都需要加
+
+    // 持久化tags
+    setItemTagList() {
       this.isPersist ? localStorage.setItem(TAB_LIST, JSON.stringify(this.tabList)) : localStorage.setItem(TAB_LIST, '[]')
     }
   },
