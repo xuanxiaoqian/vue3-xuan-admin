@@ -1,8 +1,8 @@
 import { useSettingsStore } from '@/store/modules/settings'
 
-let SIDEBAR_WIDTH = 256 // 侧边栏宽度
-let NAVBAR_HEIGHT = 64 // 菜单栏高度
-let TABS_HEIGHT = 44  // Tab高度
+const SIDEBAR_WIDTH = 256 // 侧边栏宽度
+const NAVBAR_HEIGHT = 64 // 菜单栏高度
+const TABS_HEIGHT = 44  // Tab高度
 
 // 布局属性
 export const useLayout = () => {
