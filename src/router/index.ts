@@ -27,6 +27,7 @@ const router = createRouter({
 
 const whiteList = ['/login'] // no redirect whitelist
 
+// 初始化不写在拦截器里面应该能快个几毫秒  Hhhh~
 let userStore = useUserStore(pinia)
 let tabsStore = useTabsStore(pinia)
 
