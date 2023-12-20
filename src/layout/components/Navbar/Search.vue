@@ -2,7 +2,8 @@
   <div v-if="navbar.showSearch" class="flex h-full items-center p-3">
     <el-select filterable remote reserve-keyword :placeholder="$('title') + '...'" :remote-method="remoteMethod"
       @change="selectChange">
-      <el-option v-for="route in routes" :key="route.path" :label="t(route.meta?.title as string)" :value="route.path" />
+      <el-option v-for="route in routes" :key="route.path" :label="t(route.meta?.title as string)"
+        :value="JSON.stringify(route)" />
     </el-select>
   </div>
 </template>
@@ -41,8 +42,10 @@ const remoteMethod = (query: string) => {
   }
 }
 
-const selectChange = (routeTitle: string) => {
-  router.push(routeTitle)
+const selectChange = (routeStr: string) => {
+  const route: RouteRecordRaw = JSON.parse(routeStr)
+
+  route.meta?.JumpUrl ? window.open(route.meta?.JumpUrl, '_blank') : router.push(route)
 }
 </script>
 
